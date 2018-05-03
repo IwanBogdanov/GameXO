@@ -6,5 +6,8 @@ using namespace std;
 int main()
 {
     LogicXO game;
-    game.draw();
+    while(!game.getGameOver())
+    {
+        game.draw();
+    }
 }

@@ -8,9 +8,11 @@ public:
     LogicXO();
     void draw();
 
+    bool getGameOver() const;
+
 private:
-    int width;
-    int height;
+    int range;
+    bool gameOver;
 };
 
 #endif // LOGICXO_H
