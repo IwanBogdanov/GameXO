@@ -10,16 +10,6 @@
 
 using namespace std;
 
-LogicXO::LogicXO() :
-    pos(START),
-    range(3),
-    gameOver(false),
-    x(2),
-    y(2)
-
-{
-
-}
 int LogicXO::kbhit()
 {
   struct termios oldt, newt;
@@ -46,57 +36,23 @@ int LogicXO::kbhit()
 
   return 0;
 }
-void LogicXO::draw()
+
+void LogicXO::playersXO()
+{
+    do {
+        cout << "Enter the name of the 1st player." << endl;
+        gets(player1);
+        cout << "Enter the name of the 2st player." << endl;
+        gets(player2);
+    }while(!strcmp(player1, player2));
+}
+
+void LogicXO::printXO()
 {
     system("clear");
-    int k = 0;
-    for(int l = 0; l < range; l++)
-    {
-    for(int i = 0; i < range; i++)
-    {
-    cout << " ";
+    cout << "Choose the number where you want to be like." << endl;
+    cout << "-" << 1 << "-|-" << 2 << "-|-" << 3 << "-" << endl;
+    cout << "-" << 4 << "-|-" << 5 << "-|-" << 6 << "-" << endl;
+    cout << "-" << 7 << "-|-" << 8 << "-|-" << 9 << "-" << endl;
 
-    if(i == x && i == y)
-        cout << ".";
-
-    if(i == range/3 || i == (range/3)*2)
-    {
-    cout << "#";
-    }
-    }
-    k++;
-
-    if(k == range/3 || k == (range/3)*2)
-    {
-        cout << endl;
-    for(int i = 0; i < (range*2)+1; i++)
-    cout << "#";
-    }
-    cout<< endl;
-    }
 }
-
-void LogicXO::curcor()
-{
-    switch (kbhit()) {
-    case 'w':
-        pos = UP;
-        break;
-    case 's':
-        pos = DOWN;
-        break;
-    case 'a':
-        pos = LEFT;
-        break;
-    case 'd':
-        pos = RIGHT;
-        break;
-    }
-}
-
-bool LogicXO::getGameOver() const
-{
-    return gameOver;
-}
-
-

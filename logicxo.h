@@ -5,28 +5,13 @@
 class LogicXO
 {
 public:
-    enum moveCursor
-    {
-        UP,
-        DOWN,
-        LEFT,
-        RIGHT,
-        START = 0
-    };
-
     int kbhit(); //Anton version.
-
-    LogicXO();
-    void draw();
-    void curcor();
-
-    bool getGameOver() const;
+    void playersXO();
+    void printXO();
 
 private:
-    moveCursor pos;
-    int range;
-    bool gameOver;
-    int x, y;
+    char player1[100], player2[100];
+    char arrXO[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 };
 
 #endif // LOGICXO_H

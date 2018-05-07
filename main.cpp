@@ -5,9 +5,7 @@ using namespace std;
 
 int main()
 {
-    LogicXO game;
-    while(!game.getGameOver())
-    {
-        game.draw();
-    }
+    LogicXO gameXO;
+    gameXO.playersXO();
+    gameXO.printXO();
 }
