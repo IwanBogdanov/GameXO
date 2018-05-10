@@ -1,7 +1,6 @@
 #ifndef LOGICXO_H
 #define LOGICXO_H
 
-
 class LogicXO
 {
 public:
