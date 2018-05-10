@@ -1,5 +1,6 @@
-#include <iostream>
 #include "logicxo.h"
+
+#include <iostream>
 
 using namespace std;
 
